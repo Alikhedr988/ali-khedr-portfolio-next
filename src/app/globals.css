@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* R G B channel format — enables Tailwind opacity modifiers (bg-ink/80 etc.) */
+  --ink:        12 10 8;
+  --ink-2:      22 18 16;
+  --ink-3:      32 26 20;
+  --cream:      232 221 208;
+  --cream-2:    176 164 152;
+  --muted:      107 96 88;
+  --ochre:      201 149 69;
+  --ochre-dim:  138 100 40;
+  --teal:       75 123 117;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(var(--ink));
+  color: rgb(var(--cream));
+  font-family: var(--font-fraunces), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(var(--ochre));
+  color: rgb(var(--ink));
+}
+
+/* Film grain overlay — matches existing cinematic aesthetic */
+.grain {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.6  0 0 0 0 0.75  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+  animation: grain 8s steps(10) infinite;
+  opacity: 0.1;
+  mix-blend-mode: screen;
+}
+
+@keyframes grain {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-10%, 6%); }
+  50%  { transform: translate(8%, -14%); }
+  75%  { transform: translate(-4%, 18%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Hide OS cursor on pointer devices so the custom cursor shows */
+@media (hover: hover) and (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
