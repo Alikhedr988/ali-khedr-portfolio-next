@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { withBasePath } from "@/lib/basePath";
 
 const stats = [
   { value: "10+", label: "Years" },
@@ -63,7 +64,7 @@ export default function About() {
               className="relative w-full overflow-hidden"
             >
               <Image
-                src="/images/portrait.jpg"
+                src={withBasePath("/images/portrait.jpg")}
                 alt="Ali AlSheikh"
                 fill
                 className="object-cover object-center"

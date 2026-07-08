@@ -2,12 +2,13 @@
 
 import ParallaxScrolling, { type ParallaxLayer } from "@/components/ui/parallax-scrolling";
 import { films, ytThumb } from "@/lib/films";
+import { withBasePath } from "@/lib/basePath";
 
 // Map each film to a parallax layer using its best local still (or YouTube thumb)
 // Slower speed = feels further away; faster = closer to viewer
 const layers: ParallaxLayer[] = [
   {
-    src: "/films/yumma/still-6.jpg",
+    src: withBasePath("/films/yumma/still-6.jpg"),
     alt: "Yumma — film still",
     href: "/films/yumma",
     speed: 0.25,
@@ -15,7 +16,7 @@ const layers: ParallaxLayer[] = [
     sublabel: films[0].roles.join(" · "),
   },
   {
-    src: "/films/seeds-of-dignity/still-4.jpg",
+    src: withBasePath("/films/seeds-of-dignity/still-4.jpg"),
     alt: "Seeds of Dignity — film still",
     href: "/films/seeds-of-dignity",
     speed: 0.45,
