@@ -25,7 +25,7 @@ export function VideoEmbed({
     muted ? "mute=1" : null,
     showControls ? null : "controls=0",
   ].filter(Boolean).join("&");
-  const src = `https://www.youtube.com/embed/${youtubeId}?${paramParts}`;
+  const src = `https://www.youtube-nocookie.com/embed/${youtubeId}?${paramParts}`;
 
   return (
     <div className="relative w-full overflow-hidden bg-ink" style={{ aspectRatio: "16 / 9" }}>

@@ -10,7 +10,7 @@ export default function Showreel() {
       {/* Autoplaying background video — pointer-events-none so it doesn't block UI */}
       <div className="pointer-events-none absolute inset-0">
         <iframe
-          src={`https://www.youtube.com/embed/${SHOWREEL_ID}?autoplay=1&mute=1&loop=1&playlist=${SHOWREEL_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+          src={`https://www.youtube-nocookie.com/embed/${SHOWREEL_ID}?autoplay=1&mute=1&loop=1&playlist=${SHOWREEL_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           style={{
             width: "max(100vw, calc(100vh * 16 / 9))",
